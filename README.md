@@ -1,2 +1,0 @@
-# MytheList
-A List App.
