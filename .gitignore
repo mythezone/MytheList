@@ -1,0 +1,23 @@
+build
+# Ignore build directories
+build/
+dist/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environment
+venv/
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore PySide6 generated files
+ui_*.py
+moc_*.cpp
+
+docs/_build
+src/experimental
