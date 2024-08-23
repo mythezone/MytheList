@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-tq0y7@fnjhyv66w%a@r2&frbt13w&bakq1@&n6i_*zo3)p8(^7"
+SECRET_KEY = "django-insecure-o8(^n(-zrf9(f)q=$w#_z9@a$*2vqybb-l8vx=yeuv4c1h=odx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,28 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-    # Third Lib
-    "rest_framework",
-    "djoser",
-    "storages",
-    'ckeditor',
-    'ckeditor_uploader',
-    
-    # My Apps
-    "member",
-    "mlist",
+    "account",
+    "app01" , 
+    "ckeditor",
+    "ckeditor_uploader",
 ]
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-        'width': '100%',
-    },
-}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -97,7 +80,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "mythelist_db",
+        "NAME": "mythelist",
         "USER": "root",
         "PASSWORD": "19891016Zmy!",
         "HOST": "10.16.12.105",
@@ -146,13 +129,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-# 配置 Cloudflare R2 存储
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = 'your-access-key-id'
-AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
-AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
-AWS_S3_ENDPOINT_URL = 'https://your-account-id.r2.cloudflarestorage.com'
-AWS_S3_REGION_NAME = 'auto'
-AWS_S3_SIGNATURE_VERSION = 's3v4'
